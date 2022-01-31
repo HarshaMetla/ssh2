@@ -1,0 +1,14 @@
+name: ls -a via ssh
+on: [push]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: hi
+      uses: garygrossgarten/github-action-ssh@release
+      with:
+        command: ls -a
+        host: 10.138.77.176
+        username: harshametla
+        privateKey: ${{ secrets.PRIVATE_KEY}}
